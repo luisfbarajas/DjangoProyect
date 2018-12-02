@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block  title %}
+    Programacion web | Alta de proyectos
+{% endblock %}
+    
+
+{% block content %}
+    <div class="container">
+        <h3 class="text-center mt-5">Alta de proyectos</h3>
+        
+  <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-2">
+                <label>Nombre del proyecto:</label>
+            </div>
+            <div class="col-md-3">
+                {{forma.NombreProyecto}}
+            </div>
+            <div class="col-md-3">
+                <label>Nombre de la empresa:</label>
+            </div>
+            <div class="col-md-4">
+                {{forma.Cliente}}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <label>Representante:</label>
+            </div>
+            <div class="col-md-3">
+                {{forma.representante}}
+            </div>
+            <div class="col-md-3">
+                <label>Departamento:</label>
+            </div>
+            <div class="col-md-4">
+                {{forma.departamento}}
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <label>Fecha inicio:</label>
+            </div>
+            <div class="col-md-3">
+                {{forma.inicia}}
+            </div>
+            <div class="col-md-3">
+                <label>Fecha final:</label>
+            </div>
+            <div class="col-md-4">
+                {{forma.finaliza}}
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Descripcion</label>
+            </div>
+            {{forma.descripcion}}
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <label>Objetivo general:</label>
+            </div>
+            <div class="col-md-3">
+                {{forma.ObjGeneral}}
+            </div>
+        </div>
+    <button type="submit" class="btn btn-outline-primary btn-block my-5">Aceptar y guardar</button>
+  </form>
+    </div>
+{% endblock content %}
+    
+
+{% block script %}
+<script type="text/javascript">
+
+$(document).ready(function(){
+  var start = document.getElementById("id_inicia");
+  var finaliza = document.getElementById("id_finaliza");
+  finaliza.type = 'date';
+  start.type = 'date'; 
+
+});</script>
+{% endblock script %}
+    
