@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block title %}
+  Programacion web| Agenda
+{% endblock title %}
+  
 {% block styles %}
   
 
@@ -45,7 +49,7 @@
               ];
               var fecha  = new Date();
               data.forEach((element,index) => {
-                  pruebas = { content: data[index].actividadName,
+                  pruebas = { content: data[index].actividadName+'-'+data[index].proyecto.NombreProyecto,
                   endDate: new Date(data[index].finaliza),
                   startDate: new Date(data[index].inicia)};
 
